@@ -462,6 +462,7 @@ addEventListener('mousemove', e => {
     const np = {x: Math.cos(a) * 40, y: Math.sin(a) * 70};
     if (Math.abs(np.x - state.pupil.x) > 2 || Math.abs(np.y - state.pupil.y) > 2) { state.pupil = np; updatePupils(); }
   }
+  if (matchMedia('(max-width:700px)').matches) return;
   $$('[data-parallax]').forEach(el => {
     const k = +el.dataset.parallax;
     el.style.transform = `translate(${(mx - innerWidth / 2) * k}px,${(my - innerHeight / 2) * k}px) rotate(${el.dataset.rot}deg)`;
@@ -493,7 +494,8 @@ function startCount() {
 function onScroll() {
   const y = scrollY;
   const art = $('#heroArt');
-  if (art) art.style.transform = `translateY(${y * .25}px) rotate(${y * .02}deg)`;
+  // parallax only on wide screens — on phones it drags the character over the next section
+  if (art) art.style.transform = matchMedia('(max-width:700px)').matches ? '' : `translateY(${y * .25}px) rotate(${y * .02}deg)`;
   const st = $('#stats');
   if (st && !state.counted && st.getBoundingClientRect().top < innerHeight * .8) startCount();
 }

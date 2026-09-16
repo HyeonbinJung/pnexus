@@ -301,19 +301,20 @@ h1,h2{text-wrap:balance}
   .speed{display:flex;width:100%;border-radius:22px;padding:12px 16px;gap:10px;transform:rotate(-1deg);margin-top:20px}
   .speed-label{font-size:14px;flex:1 1 100%}
   .speed input{flex:1;width:auto}
-  .hero-art{height:min(70vw,300px);margin-top:8px;transform:none!important}
-  .hero-halo,.nexi-wrap{left:12%;width:64%}
+  /* phone: character centered, labels pushed to the four corners so nothing covers it */
+  .hero-art{height:min(88vw,340px);margin-top:8px;transform:none!important}
+  .hero-halo,.nexi-wrap{left:22%;width:56%;top:16%}
   .nexi img{filter:drop-shadow(0 16px 24px rgba(255,90,54,.3))}
-  .nexi-wrap{animation-duration:6s}
-  .sticker{font-size:11px;padding:7px 10px;border-radius:10px;transform:none!important}
-  .sticker-a{right:0;top:28%;transform:rotate(9deg)!important}
-  .sticker-b{left:0;bottom:6%;transform:rotate(-7deg)!important}
-  .sticker-c{right:0;bottom:0;transform:rotate(4deg)!important}
+  .nexi-wrap{animation:none}
+  .sticker{font-size:10px;padding:6px 9px;border-radius:9px;transform:none!important;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+  .sticker-a{right:0;top:2%;transform:rotate(6deg)!important}
+  .sticker-b{left:0;bottom:9%;transform:rotate(-5deg)!important}
+  .sticker-c{right:0;bottom:0;transform:rotate(3deg)!important}
   .bubble-wrap{left:0;top:0}
-  .bubble{max-width:120px;padding:8px 12px;font-size:clamp(13px,3.6vw,16px)!important}
-  .bubble .tail1{width:16px;height:16px;right:-4px;bottom:-10px}
-  .bubble .tail2{width:7px;height:7px;right:-13px;bottom:-19px}
-  .dashed-ring{width:48px;height:48px;right:10%;top:44%}
+  .bubble{max-width:110px;padding:7px 10px;font-size:clamp(12px,3.3vw,14px)!important;transform:rotate(-3deg)}
+  .bubble .tail1{width:14px;height:14px;right:-4px;bottom:-9px}
+  .bubble .tail2{width:6px;height:6px;right:-11px;bottom:-16px}
+  .dashed-ring{display:none}
   .stats{padding:48px 0;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
   .stat{padding:20px;border-radius:20px}
   .stat-v{font-size:40px}
